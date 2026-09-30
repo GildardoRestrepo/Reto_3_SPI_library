@@ -94,7 +94,7 @@ sequenceDiagram
 
 ## Etapas de desarrollo
 
-Cada etapa se trabaja en una rama `feature/*` y se integra a `develop` por Pull Request revisado por el compañero. Se busca que ambos integrantes toquen tanto el bajo nivel como la API (se evalúa el dominio de los dos).
+Cada etapa se trabaja en una rama `feature/*` y se integra a `main` por Pull Request revisado por el otro equipo (ver [FLUJO_DE_TRABAJO.md](FLUJO_DE_TRABAJO.md)). Se busca que ambos integrantes toquen tanto el bajo nivel como la API (se evalúa el dominio de los dos).
 
 | # | Etapa | Entregable verificable | Responsable |
 | - | ----- | ---------------------- | ----------- |
@@ -256,10 +256,11 @@ if (g_spi_status == SPI_OK) {
 
 ---
 ## Flujo de trabajo en Git
+Guía completa con comandos: [FLUJO_DE_TRABAJO.md](FLUJO_DE_TRABAJO.md).
+
 - `main`: solo versiones estables y demostrables (cada merge = algo que funciona en hardware).
-- `develop`: integración del trabajo en curso.
-- `feature/<modulo>` (p. ej. `feature/ll-spi`, `feature/dev-adxl345`): una rama por módulo o etapa.
-- Todo cambio entra a `develop` por **Pull Request** revisado por el otro integrante.
+- `feature/<modulo>` (p. ej. `feature/ll-spi`, `feature/dev-adxl345`): una rama corta por módulo o etapa.
+- Dos equipos (Gilbert + Claude, Marco + Claude). Todo cambio entra a `main` por **Pull Request** revisado por el otro equipo.
 - Mensajes de commit en español, en imperativo y con prefijo: `feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `chore:`.
   Ejemplo: `feat(drv_spi): agregar SPI_TransmitReceive con timeout`.
 
