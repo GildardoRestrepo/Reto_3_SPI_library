@@ -1,0 +1,8 @@
+# Normaliza finales de línea para evitar diffs falsos entre equipos
+* text=auto eol=lf
+
+*.bat text eol=crlf
+
+*.pdf binary
+*.png binary
+*.jpg binary
