@@ -9,7 +9,7 @@
 
 static int pin_valido(GPIO_Pin_t pin)
 {
-    return ((uint32_t)pin.port < LL_GPIO_PORT_COUNT) && (pin.pin < 16U);
+    return (pin.port < LL_GPIO_PORT_COUNT) && (pin.pin < 16U);
 }
 
 GPIO_Status_t GPIO_Init(GPIO_Pin_t pin, const GPIO_Config_t *cfg)
@@ -19,7 +19,7 @@ GPIO_Status_t GPIO_Init(GPIO_Pin_t pin, const GPIO_Config_t *cfg)
         return GPIO_ERR_PARAM;
     }
 
-    ll_rcc_gpio_clock_enable((uint8_t)pin.port);
+    ll_rcc_gpio_clock_enable(pin.port);
 
     /* 1. Si es salida, fijar el nivel ANTES de activar el modo: el pin nunca muestra un valor falso
      *    (clave para el CS del ADXL345, que debe arrancar en alto). */

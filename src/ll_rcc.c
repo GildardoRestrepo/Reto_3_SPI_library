@@ -62,7 +62,7 @@ uint32_t ll_rcc_get_sysclk_hz(void)
     uint32_t pllp = ((((pllcfgr & RCC_PLLCFGR_PLLP_Msk) >> RCC_PLLCFGR_PLLP_Pos) + 1U) * 2U);
 
     if (pllm == 0U) return 0U;             /* configuración inválida */
-    return (uint32_t)(((uint64_t)f_in * plln) / (pllm * pllp));
+    return ((uint64_t)f_in * plln) / (pllm * pllp);
 }
 
 uint32_t ll_rcc_get_hclk_hz(void)
